@@ -1,0 +1,15 @@
+body, #app {
+    height: 100vh;
+    background-color: #D7D7D7;
+}
+
+@tailwind base;
+
+@layer base {
+    html {
+        @apply text-dark-deep;
+    }
+}
+
+@tailwind components;
+@tailwind utilities;
