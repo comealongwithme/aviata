@@ -1,17 +1,12 @@
 <script setup lang="ts">
 import { FlightRecord } from '../types'
+import { convertSecondsToHoursMinutes } from '../helpers'
 
 const {flight} = defineProps<{
 	flight: FlightRecord
 }>()
 
 const segments = flight.itineraries[0][0].segments
-
-function convertSecondsToHoursMinutes(seconds: number): string {
-	const hours = Math.floor(seconds / 3600)
-	const minutes = Math.floor((seconds % 3600) / 60)
-	return `${hours} ч ${minutes} м`
-}
 
 const layoversSeconds = flight.itineraries[0][0].layovers.reduce((acc, curr) => acc + curr, 0)
 

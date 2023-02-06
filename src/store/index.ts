@@ -6,8 +6,6 @@ const store = ref<{
 	flights: Array<FlightRecord>
 }>()
 
-const displayedFlights = ref<Array<FlightRecord>>()
-
 export default {
 	install: () => {
 		fetch('./results.json')
@@ -18,6 +16,6 @@ export default {
 }
 
 export function useStore() {
-	return { store, displayedFlights }
+	return { store }
 }
 
